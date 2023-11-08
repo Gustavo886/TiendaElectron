@@ -5,6 +5,9 @@ const Store = require('electron-store');
 const store = new Store();
 const path = require('path');
 const db = require('./connection.js');
+//Show changes in tha code immediately
+const { app } = require('electron')
+app.isPackaged || require('electron-reloader')(module)
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
